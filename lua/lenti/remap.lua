@@ -11,3 +11,9 @@ vim.keymap.set('n', 'fh', builtin.help_tags, {})
 
 -- Mason
 nnoremap("<leader>ma", "<cmd>Mason<CR>")
+
+-- Formatter
+nnoremap("<leader>f", "<cmd>Format<CR>")
+
+-- Prettier
+nnoremap("<leader>p", "<cmd>Prettier<CR>")
