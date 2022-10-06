@@ -17,3 +17,8 @@ nnoremap("<leader>f", "<cmd>Format<CR>")
 
 -- Prettier
 nnoremap("<leader>p", "<cmd>Prettier<CR>")
+
+-- Saving and sourcing files
+nnoremap("<leader>so", "<cmd>so%<CR>")
+nnoremap("<leader>sa", "<cmd>w<CR>")
+

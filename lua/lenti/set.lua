@@ -10,7 +10,12 @@ vim.opt.incsearch = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
+
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.writebackup = false
+
+vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
-
