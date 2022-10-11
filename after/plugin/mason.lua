@@ -28,3 +28,18 @@ require("mason").setup({
         }
     }
 })
+
+require("mason-lspconfig").setup({
+    ensure_installed = {
+      "cssls",
+      "cssmodules_ls",
+      "html",
+      "jsonls",
+      "tsserver",
+      "sumneko_lua",
+      "marksman",
+      "pyright",
+      "rust_analyzer",
+      "tailwindcss",
+   }
+})

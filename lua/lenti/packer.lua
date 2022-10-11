@@ -19,6 +19,12 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use { "williamboman/mason.nvim" }
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
+  use 'dinhhuy258/git.nvim' -- Git
+  use 'lewis6991/gitsigns.nvim' -- Git signs on the number
+  use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
