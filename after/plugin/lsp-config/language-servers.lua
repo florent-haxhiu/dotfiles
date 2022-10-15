@@ -34,14 +34,26 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
-require('lspconfig')['pyright'].setup{
+
+for _,value in pairs({'pyright', 'tsserver'}) do
+    require('lspconfig')[value].setup{
+        on_attach = on_attach,
+        flags = lsp_flags,
+    }
+end
+
+require('lspconfig')['stylelint_lsp'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+
+    settings = {
+        stylelintplus = {
+            autoFixOnSave = true,
+            autoFixOnFormat = true,
+        }
+    }
 }
-require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
+
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
