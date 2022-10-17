@@ -20,7 +20,7 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-  use('wakatime/vim-wakatime') -- Wakatime for github
+	use("wakatime/vim-wakatime") -- Wakatime for github
 	use({ "williamboman/mason.nvim" })
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("windwp/nvim-autopairs")
@@ -31,6 +31,11 @@ return require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
+	use({
+		"tzachar/cmp-tabnine",
+		run = "./install.sh",
+		requires = "hrsh7th/nvim-cmp"
+	})
 	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
 	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
 	use("L3MON4D3/LuaSnip") -- Snippets plugin
