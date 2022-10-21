@@ -1,0 +1,25 @@
+general {
+  colors = true
+  color_good = "#a3be8c"
+  color_degraded = "#ebcb8b"
+  color_bad = "#bf616a"
+  interval = 1
+  separator = "|"
+}
+
+order += "disk /"
+order += "cpu_usage"
+order += "memory"
+
+disk "/" {
+  format = "/: %percentage_used"
+}
+
+cpu_usage {
+  format = "CPU: %usage"
+}
+
+memory {
+  memory_used_method = classical
+  format="Memory: %used/%total"
+}
