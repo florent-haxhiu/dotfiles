@@ -1,5 +1,0 @@
-package foreign-env
-package fzf
-package nvm
-theme default
-theme sashimi
