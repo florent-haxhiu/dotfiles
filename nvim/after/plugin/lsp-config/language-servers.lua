@@ -37,7 +37,7 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-for _, value in pairs({ "pyright", "tsserver", "html", "cssls", "jsonls", "sumneko_lua" }) do
+for _, value in pairs({ "pyright", "tsserver", "html", "cssls", "jsonls", "sumneko_lua", "prismals" }) do
   require("lspconfig")[value].setup({
     on_attach = on_attach,
     flags = lsp_flags,

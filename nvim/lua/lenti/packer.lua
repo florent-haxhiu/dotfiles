@@ -77,4 +77,5 @@ return require("packer").startup(function(use)
 			vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
 		end,
 	})
+  use('ThePrimeagen/vim-be-good') -- Getting good at vim, vim games
 end)
