@@ -8,7 +8,8 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("folke/tokyonight.nvim")
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-	use("ryanoasis/vim-devicons")
+  use("nvim-treesitter/nvim-treesitter-context") -- Shows functions signature
+	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "kyazdani42/nvim-web-devicons" })
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
@@ -31,16 +32,15 @@ return require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
-	use({
-		"tzachar/cmp-tabnine",
-		run = "./install.sh",
-		requires = "hrsh7th/nvim-cmp"
-	})
 	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
+	use("hrsh7th/cmp-nvim-lsp-signature-help")
+	-- using packer.nvim
 	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
 	use("L3MON4D3/LuaSnip") -- Snippets plugin
 	use("mhartington/formatter.nvim") -- Formatter
 	-- use 'MunifTanjim/prettier.nvim'
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-cmdline")
 	use({
 		"kylechui/nvim-surround",
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -77,5 +77,5 @@ return require("packer").startup(function(use)
 			vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
 		end,
 	})
-  use('ThePrimeagen/vim-be-good') -- Getting good at vim, vim games
+	use("ThePrimeagen/vim-be-good") -- Getting good at vim, vim games
 end)

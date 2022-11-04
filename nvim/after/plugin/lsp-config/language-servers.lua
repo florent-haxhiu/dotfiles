@@ -37,12 +37,37 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-for _, value in pairs({ "pyright", "tsserver", "html", "cssls", "jsonls", "sumneko_lua", "prismals" }) do
+local root_pattern = require("lspconfig").util.root_pattern
+
+for _, value in pairs({ "pyright", "html", "cssls", "jsonls", "prismals" }) do
   require("lspconfig")[value].setup({
     on_attach = on_attach,
     flags = lsp_flags,
   })
 end
+
+require("lspconfig")["tsserver"].setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  root_dir = root_pattern("package.json", "tsconfig.json"),
+})
+
+require("lspconfig")["sumneko_lua"].setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+
+  settings = {
+    Lua = {
+      runtime = {
+        version = "LuaJIT",
+      },
+      diagnostic = {
+        globals = { "vim" },
+      },
+    },
+  },
+})
 
 require("lspconfig")["stylelint_lsp"].setup({
   on_attach = on_attach,
