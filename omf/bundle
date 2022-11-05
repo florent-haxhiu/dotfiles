@@ -1,5 +1,5 @@
-package foreign-env
-package fzf
-package nvm
+theme batman
 theme default
+theme fox
+theme gitstatus
 theme sashimi
