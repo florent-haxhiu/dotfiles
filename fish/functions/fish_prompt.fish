@@ -1,1 +1,1 @@
-/Users/florenthaxhiu/.local/share/omf/themes/sashimi/fish_prompt.fish
+/home/florent/.local/share/omf/themes/sashimi/fish_prompt.fish
