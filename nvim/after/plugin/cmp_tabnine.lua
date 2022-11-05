@@ -22,15 +22,16 @@ cmp.setup({
 		{ name = "luasnip" },
 	}, {
 		{ name = "buffer" },
-    { name = "nvim_lsp_signature_help"}
+		{ name = "nvim_lsp_signature_help" },
 	}),
 })
 
 local servers = { "rust_analyzer", "pyright", "tsserver", "sumneko_lua", "jsonls", "html", "cssls", "stylelint_lsp" }
 
+-- Set up lspconfig.
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 for _, value in pairs(servers) do
-	-- Set up lspconfig.
-	local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 	-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 	require("lspconfig")[value].setup({
 		capabilities = capabilities,

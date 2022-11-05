@@ -8,7 +8,7 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("folke/tokyonight.nvim")
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-  use("nvim-treesitter/nvim-treesitter-context") -- Shows functions signature
+    use("nvim-treesitter/nvim-treesitter-context") -- Shows functions signature
 	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "kyazdani42/nvim-web-devicons" })
 	use({
 		"nvim-lualine/lualine.nvim",
