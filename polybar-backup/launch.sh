@@ -3,7 +3,7 @@
 
 killall -q polybar
 
-polybar example 2>&1 | tee -a /tmp/polybar.log & disown
+polybar mybar 2>&1 | tee -a /tmp/polybar.log & disown
 
 #while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
