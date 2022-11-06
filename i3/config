@@ -60,7 +60,10 @@ bindsym $mod+i exec "firefox"
 
 # Copy and paste
 bindsym $mod+c exec wl-copy
-bindsym $mod+p exec wl-paste
+# bindsym $mod+p exec wl-paste
+
+bindsym $mod+p exec --no-startup-id ~/.config/rofi/launchers/type-6/launcher.sh
+bindsym $mod+Shift+x exec --no-startup-id powermenu_t2
 
 # Gaps
 gaps inner 8
