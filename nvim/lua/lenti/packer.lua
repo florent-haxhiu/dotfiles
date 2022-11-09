@@ -36,11 +36,12 @@ return require("packer").startup(function(use)
 	use("lewis6991/gitsigns.nvim") -- Git signs on the number
 	use("williamboman/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
+
+  -- Cmp Plugins
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
 	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
 	use("hrsh7th/cmp-nvim-lsp-signature-help")
-	-- using packer.nvim
 	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
 	use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" }) -- Snippets plugin
 	use("mhartington/formatter.nvim") -- Formatter
@@ -82,4 +83,5 @@ return require("packer").startup(function(use)
 			vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
 		end,
 	})
+  use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
 end)

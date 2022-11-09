@@ -2,6 +2,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     bash -c "fm6000 -c 'random'"
 
+    # Adding my bin to PATH
+    fish_add_path -aP $HOME/.local/bin
+
     starship init fish | source
 
     # Shortcut for nvim, can't be asked to type out nvim -> vim is easier
