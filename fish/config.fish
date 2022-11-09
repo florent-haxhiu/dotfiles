@@ -13,4 +13,16 @@ if status is-interactive
         python3 $argv
     end
 
+    function pip
+        pip3 $argv
+    end
+
+    function ls
+        exa $argv
+    end
+
+    function cat
+        bat $argv
+    end
+
 end

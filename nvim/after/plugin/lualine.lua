@@ -2,7 +2,7 @@ local auto = require'lualine.themes.auto'
 
 require('lualine').setup {
     options = {
-        theme = auto,
+        theme = 'catppuccin',
         component_separators = '|',
     }
 }

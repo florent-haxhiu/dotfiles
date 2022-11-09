@@ -1,7 +1,8 @@
 require("bufferline").setup({
+	highlights = require("catppuccin.groups.integrations.bufferline").get(),
 	options = {
 		separator_style = "slant",
-        persist_buffer_sort = true,
+		persist_buffer_sort = true,
 		diagnostics = "nvim_lsp",
 		diagnostics_indicator = function(count, level, diagnostics_dict, context)
 			local icon = level:match("error") and " " or " "
@@ -10,24 +11,7 @@ require("bufferline").setup({
 		indicator_style = "|",
 		enforce_regular_tabs = true,
 		always_show_bufferline = true,
-	},
-	highlights = {
-		fill = {
-			fb = { attribute = "fg", highlight = "#ff0000" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-		background = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-		separator = {
-			fg = { attribute = "bg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "TabLine" },
-		},
-		separator_selected = {
-			fg = { attribute = "bg", highlight = "Normal" },
-			bg = { attribute = "bg", highlight = "Normal" },
-		},
+		themable = true,
 	},
 })
 
