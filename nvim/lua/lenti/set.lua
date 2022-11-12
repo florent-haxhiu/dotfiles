@@ -14,9 +14,9 @@ vim.opt.termguicolors = true
 vim.opt.wrap = true
 vim.opt.scrolloff = 8
 
-vim.cmd('syntax enable')
+vim.cmd("syntax enable")
 
-vim.o.completeopt="menuone,noinsert,noselect"
+vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.swapfile = false
 vim.o.backup = false
 vim.o.writebackup = false

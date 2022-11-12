@@ -21,7 +21,7 @@ local diff = {
 	"diff",
 	colored = false,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+	cond = hide_in_width,
 }
 
 local mode = {
@@ -65,6 +65,14 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
+		theme = "catppuccin",
+		component_separators = { left = "", right = "" },
+	},
+})
+
+--[[lualine.setup({
+	options = {
+		icons_enabled = true,
 		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
@@ -90,4 +98,4 @@ lualine.setup({
 	},
 	tabline = {},
 	extensions = {},
-})
+}) --]]

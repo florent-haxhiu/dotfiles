@@ -49,6 +49,7 @@ return require("packer").startup(function(use)
 	use("mhartington/formatter.nvim") -- Formatter
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
+
 	use({
 		"kylechui/nvim-surround",
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -86,4 +87,10 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 end)
