@@ -19,5 +19,5 @@ local sources = {
 }
 
 null_ls.setup({
-	ources = sources,
+	sources = sources,
 })
