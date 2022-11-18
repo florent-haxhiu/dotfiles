@@ -30,4 +30,4 @@ catppuccin.setup {
 	},
 }
 
-vim.api.nvim_command "colorscheme catppuccin-frappe"
+--vim.api.nvim_command "colorscheme catppuccin-frappe"

@@ -4,93 +4,102 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
-	-- Packer can manage itself
-	use("wbthomason/packer.nvim")
-	use("folke/tokyonight.nvim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-	use("nvim-treesitter/nvim-treesitter-context") -- Shows functions signature
-	use({
-		"akinsho/bufferline.nvim",
-		tag = "v3.*",
-		requires = "kyazdani42/nvim-web-devicons",
-		after = "catppuccin",
-	})
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
-	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
-		-- or                            , branch = '0.1.x',
-		requires = { { "nvim-lua/plenary.nvim" } },
-	})
+  -- Packer can manage itself
+  use("wbthomason/packer.nvim")
+  use("folke/tokyonight.nvim")
+  use({ "catppuccin/nvim", as = "catppuccin" })
+  use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+  use("nvim-treesitter/nvim-treesitter-context") -- Shows functions signature
+  use({
+    "akinsho/bufferline.nvim",
+    tag = "v3.*",
+    requires = "kyazdani42/nvim-web-devicons",
+    after = "catppuccin",
+  })
+  use({
+    "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+  })
+  use({
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.0",
+    -- or                            , branch = '0.1.x',
+    requires = { { "nvim-lua/plenary.nvim" } },
+  })
 
-	use("MunifTanjim/prettier.nvim")
+  use("MunifTanjim/prettier.nvim")
 
-	use("wakatime/vim-wakatime") -- Wakatime for github
-	use({ "williamboman/mason.nvim" })
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("windwp/nvim-autopairs")
-	use("windwp/nvim-ts-autotag")
-	use("dinhhuy258/git.nvim") -- Git
-	use("lewis6991/gitsigns.nvim") -- Git signs on the number
-	use("williamboman/mason-lspconfig.nvim")
-	use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
+  use("wakatime/vim-wakatime") -- Wakatime for github
+  use({ "williamboman/mason.nvim" })
+  use("jose-elias-alvarez/null-ls.nvim")
+  use("windwp/nvim-autopairs")
+  use("windwp/nvim-ts-autotag")
+  use("dinhhuy258/git.nvim") -- Git
+  use("lewis6991/gitsigns.nvim") -- Git signs on the number
+  use("williamboman/mason-lspconfig.nvim")
+  use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
 
-	-- Cmp Plugins
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
-	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
-	use("hrsh7th/cmp-nvim-lsp-signature-help")
-	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
-	use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" }) -- Snippets plugin
-	use("mhartington/formatter.nvim") -- Formatter
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
+  -- Cmp Plugins
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/nvim-cmp") -- Autocompletion plugin
+  use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
+  use("hrsh7th/cmp-nvim-lsp-signature-help")
+  use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
+  use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" }) -- Snippets plugin
+  use("mhartington/formatter.nvim") -- Formatter
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-cmdline")
 
-	use({
-		"kylechui/nvim-surround",
-		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
-		end,
-	})
-	use("ThePrimeagen/harpoon")
-	use({
-		"lewis6991/hover.nvim",
-		config = function()
-			require("hover").setup({
-				init = function()
-					-- Require providers
-					require("hover.providers.lsp")
-					-- require('hover.providers.gh')
-					-- require('hover.providers.jira')
-					-- require('hover.providers.man')
-					-- require('hover.providers.dictionary')
-				end,
-				preview_opts = {
-					border = nil,
-				},
-				-- Whether the contents of a currently open hover window should be moved
-				-- to a :h preview-window when pressing the hover keymap.
-				preview_window = false,
-				title = true,
-			})
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end,
+  })
+  use("ThePrimeagen/harpoon")
+  use({
+    "lewis6991/hover.nvim",
+    config = function()
+      require("hover").setup({
+        init = function()
+          -- Require providers
+          require("hover.providers.lsp")
+          -- require('hover.providers.gh')
+          -- require('hover.providers.jira')
+          -- require('hover.providers.man')
+          -- require('hover.providers.dictionary')
+        end,
+        preview_opts = {
+          border = nil,
+        },
+        -- Whether the contents of a currently open hover window should be moved
+        -- to a :h preview-window when pressing the hover keymap.
+        preview_window = false,
+        title = true,
+      })
 
-			-- Setup keymaps
-			vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
-			vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
-		end,
-	})
-	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
+      -- Setup keymaps
+      vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
+      vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
+    end,
+  })
+  use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  })
+  use {
+    "danymat/neogen",
+    config = function()
+      require('neogen').setup {}
+    end,
+    requires = "nvim-treesitter/nvim-treesitter",
+    -- Uncomment next line if you want to follow only stable versions
+    -- tag = "*"
+  }
 end)

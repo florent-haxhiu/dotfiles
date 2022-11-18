@@ -63,7 +63,7 @@ function Catppuccino()
 end
 
 -- TokyoNight Theme
--- TokyoNight()
+TokyoNight()
 
 -- Catpupuccino
 -- Catppuccino()

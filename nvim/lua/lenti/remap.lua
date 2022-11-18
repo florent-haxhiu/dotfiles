@@ -22,3 +22,4 @@ nnoremap("<leader>p", "<cmd>Prettier<CR>")
 nnoremap("<leader>so", "<cmd>so%<CR>")
 nnoremap("<leader>sa", "<cmd>w<CR>")
 
+nnoremap("<leader>ne", "<cmd>Neogen<CR>")
