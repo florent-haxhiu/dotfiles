@@ -16,6 +16,7 @@ local sources = {
   formatting.stylua,
   diagnostics.flake8,
   diagnostics.tidy,
+  formatting.rustfmt,
 }
 
 null_ls.setup({
