@@ -17,6 +17,7 @@ local sources = {
   diagnostics.flake8,
   diagnostics.tidy,
   formatting.rustfmt,
+  --formatting.clang_format,
 }
 
 null_ls.setup({
