@@ -11,7 +11,7 @@ if status is-interactive
     set pipenv_fish_fancy yes
 
     if set -q VIRTUAL_ENV
-      echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
+      bash -c "echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " ""
     end
 
     # Shortcut for nvim, can't be asked to type out nvim -> vim is easier

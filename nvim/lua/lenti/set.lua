@@ -13,6 +13,7 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = true
 vim.opt.scrolloff = 8
+vim.opt.showtabline = 0
 
 vim.cmd("syntax enable")
 

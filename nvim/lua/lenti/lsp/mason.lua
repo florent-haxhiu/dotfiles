@@ -7,7 +7,8 @@ local servers = {
 	-- "bashls",
 	"jsonls",
   "rust_analyzer",
-  "clangd"
+  "clangd",
+  "eslint"
 	-- "yamlls",
 }
 
