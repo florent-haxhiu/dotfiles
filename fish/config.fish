@@ -4,8 +4,9 @@ if status is-interactive
 
     # Adding my bin to PATH
     fish_add_path -aP $HOME/.local/bin
+    fish_add_path -aP $HOME/.cargo/bin/
 
-    starship init fish | source
+  #starship init fish | source
 
     # Set if your term supports 'pipenv shell --fancy'
     set pipenv_fish_fancy yes
@@ -13,6 +14,8 @@ if status is-interactive
     if set -q VIRTUAL_ENV
       bash -c "echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " ""
     end
+
+    set -g theme_nerd_fonts yes
 
     # Shortcut for nvim, can't be asked to type out nvim -> vim is easier
     function vim

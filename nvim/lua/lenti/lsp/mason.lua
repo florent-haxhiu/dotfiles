@@ -8,7 +8,10 @@ local servers = {
 	"jsonls",
   "rust_analyzer",
   "clangd",
-  "eslint"
+  "eslint",
+  --"java-debug-adapter",
+  --"java-test",
+  "jdtls"
 	-- "yamlls",
 }
 
