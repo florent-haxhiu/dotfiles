@@ -6,7 +6,6 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
-	use("folke/tokyonight.nvim")
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/nvim-treesitter-context") -- Shows functions signature
 	use({
@@ -22,29 +21,34 @@ return require("packer").startup(function(use)
 
 	use({ "sainnhe/gruvbox-material", opt = true })
 
-	use("MunifTanjim/prettier.nvim")
-
 	use("wakatime/vim-wakatime") -- Wakatime for github
-	use({ "williamboman/mason.nvim" })
+	--
+
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("windwp/nvim-autopairs")
 	use("windwp/nvim-ts-autotag")
 	use("dinhhuy258/git.nvim") -- Git
 	use("lewis6991/gitsigns.nvim") -- Git signs on the number
-	use("williamboman/mason-lspconfig.nvim")
-	use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
 
-	-- Cmp Plugins
+	-- LSP Support
+	use({ "williamboman/mason.nvim" })
+	use("williamboman/mason-lspconfig.nvim")
+	use("neovim/nvim-lspconfig")
+
+	-- Autocompletion
 	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
-	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lsp-signature-help")
-	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
-	use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" }) -- Snippets plugin
-	use("mhartington/formatter.nvim") -- Formatter
+	use("saadparwaiz1/cmp_luasnip")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
 
+	-- Snippets
+	use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" })
+	use({ "rafamadriz/friendly-snippets" })
+
+	use("mhartington/formatter.nvim")
 	use({ "ellisonleao/gruvbox.nvim" })
 
 	use({
@@ -82,7 +86,6 @@ return require("packer").startup(function(use)
 			vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
 		end,
 	})
-	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = function()
@@ -98,4 +101,6 @@ return require("packer").startup(function(use)
 		-- Uncomment next line if you want to follow only stable versions
 		-- tag = "*"
 	})
+
+	use({ "mbbill/undotree" })
 end)
