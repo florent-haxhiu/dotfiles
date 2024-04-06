@@ -16,7 +16,7 @@ return require("packer").startup(function(use)
         requires = "nvim-lua/plenary.nvim",
     }
 
-    use ('andweeb/presence.nvim')
+    use('andweeb/presence.nvim')
 
     use {
         "VonHeikemen/lsp-zero.nvim",
@@ -40,7 +40,7 @@ return require("packer").startup(function(use)
 
     use({
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.0",
+        tag = "0.1.5",
         requires = { { "nvim-lua/plenary.nvim" } },
     })
 
@@ -50,11 +50,10 @@ return require("packer").startup(function(use)
     use("ellisonleao/gruvbox.nvim")
     use({
         "rose-pine/neovim",
-        as = "rose-pine",
-        config = function ()
-            vim.cmd('colorscheme rose-pine')
-        end
+        as = "rose-pine"
     })
+
+    use("plentiform/go-ide")
 
     use {
         "w0rp/ale",
@@ -63,7 +62,8 @@ return require("packer").startup(function(use)
         config = "vim.cmd[[ALEEnable]]"
     }
 
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = {
+            "markdown" } end, ft = { "markdown" }, })
 
     use {
         "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" },
