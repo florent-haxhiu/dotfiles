@@ -1,25 +1,37 @@
-require "nvchad.options"
+-- [[ Setting options ]]
+-- See `:help vim.opt`
+-- NOTE: You can change these options as you wish!
+--  For more options, you can see `:help option-list`
 
--- add yours here!
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.mouse = 'a'
+vim.opt.showmode = false
 
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
---
-vim.g.mapleader = " "
-vim.g.bulitin_lsp = true
-vim.opt.termguicolors = true
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 
--- Behaviors
-vim.opt.belloff = "all" -- NO BELLS!
-vim.opt.completeopt = { "menuone", "noselect" } -- ins-completion how I like
-vim.opt.swapfile = false -- no swap files
-vim.opt.inccommand = "nosplit" -- preview %s commands live as I type
-vim.opt.undofile = true -- keep track of my 'undo's between sessions
-vim.opt.grepprg = "rg --vimgrep --smart-case --no-heading" -- search with rg
+vim.opt.breakindent = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.signcolumn = 'yes'
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
-vim.opt.cmdheight = 2 -- more space in the neovim command line for displaying messages
-vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
-vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 2 -- insert 2 spaces for a tab
-vim.opt.relativenumber = true -- relative line numbers
-vim.opt.wrap = true -- wrap lines
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.inccommand = 'split'
+vim.opt.cursorline = true
+vim.opt.scrolloff = 10
+
+-- Disable Netrw
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+
+-- vim: ts=2 sts=2 sw=2 et
