@@ -36,6 +36,7 @@ return {
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
           map('<leader>fm', vim.lsp.buf.format, 'Format Buffer', { 'n', 'x' })
+          map('<leader>vd', vim.diagnostic.open_float, 'Open diagnostic')
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
@@ -105,6 +106,10 @@ return {
               completion = {
                 callSnippet = 'Replace',
               },
+              runtime = { version = "Lua 5.1" },
+              diagnostics = {
+                globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
+              }
             },
           },
         },
@@ -112,10 +117,7 @@ return {
 
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua',
         'ruff',
-        'black',
-        'isort',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -127,21 +129,6 @@ return {
             local server = servers[server_name] or {}
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
-          end,
-
-          ["lua_ls"] = function()
-            local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup {
-              capabilities = capabilities,
-              settings = {
-                Lua = {
-                  runtime = { version = "Lua 5.1" },
-                  diagnostics = {
-                    globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
-                  }
-                }
-              }
-            }
           end,
         },
       }
